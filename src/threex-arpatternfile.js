@@ -1,6 +1,6 @@
-var THREEx = THREEx || {}
+var THREEx = THREEx || {};
 
-THREEx.ArPatternFile = {}
+THREEx.ArPatternFile = {};
 
 THREEx.ArPatternFile.toCanvas = function(patternFileString, onComplete){
 	console.assert(false, 'not yet implemented')
