@@ -193,9 +193,11 @@ const MovieUploader = () => {
           {isUploaded ? (
             <>
               <QRCodeCanvas id = "canvas_qr" value={{qr_path}} />,
-                <Button variant="contained" onClick={DownloadQR}>
-                  QRコードのダウンロード
-                </Button>
+                <p>
+                  <Button variant="contained" onClick={DownloadQR}>
+                    QRコードのダウンロード
+                  </Button>
+                </p>
                 <br></br>
               <div className="result">
                 <h2 id="result">
