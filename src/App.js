@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import MovieUploader from "./MovieUploader";
 import Makemarker from "./Makemarker";
+import ARReader from "./ARReader";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
             <Route path={`/`} element={<Home />} />
             <Route path={`/about/`} element={<About />} />
             <Route path={`/marker/`} element={<Marker />} />
+            <Route path={`/reader/`} element={<Reader />} />
         </Routes>
       </div>
     </BrowserRouter>
@@ -20,10 +22,6 @@ const App = () => {
 
 const Home = () => {
   return (
-    // <div>
-    //   <h1>Welcome</h1>
-    //   <p><Link to="/about">始める</Link></p>
-    // </div>
     <html>
       <head>
         <title>Welcome</title>
@@ -50,15 +48,6 @@ const About = () => {
   );
 }
 
-// const Marker = () => {
-//   return (
-//     <div>
-//       <h1>ARマーカー作成</h1>
-//       <p><Link to="/about">始める</Link></p>
-//     </div>
-//   )
-// }
-
 const Marker = () => {
   return (
     <div className="Marker">
@@ -66,6 +55,15 @@ const Marker = () => {
       <Makemarker />
     </div>
   );
+}
+
+const Reader = () => {
+  return (
+    <div className="Reader">
+      {/* ARReader */}
+      <ARReader />
+    </div>
+  )
 }
 
 export default App;
