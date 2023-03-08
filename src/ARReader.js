@@ -1,12 +1,26 @@
 import React from "react";
+import { getStorage, ref, getDownloadURL } from "firebase/storage"
+// ページ遷移
+import { Link, useLocation, useSearchParams, } from "react-router-dom";
 
-const ARComponent = () => {
+const ARReader = () => {
   // IDの取得 おそらくGET
+  const currentURL = window.location.href;
+  console.log(currentURL);
+  const queryParams = new URLSearchParams(window.location.search);
+  const paramsObj = Object.fromEntries(queryParams.entries());
+  var user_id = paramsObj['user_id'];
+  console.log(paramsObj);
+  console.log("id取得:", user_id);
 
   // DBからpathの取得 非同期処理注意
+  const refurl = 'gs://test-arbum.appspot.com/' + user_id +'/sample.mp4';
+  const storage = getStorage();
+  const pathReference = getDownloadURL(ref(storage, refurl));
+  console.log(pathReference)
 
   // pathからStorageにアクセス(今は直接アクセス)
-  const markerpatternfile_path = process.env.PUBLIC_URL + "/testsrc/pattern-marker.patt";
+  const markerpatternfile_path = process.env.PUBLIC_URL + "/testsrc/pattern-minari.patt";
   const moviefile_path = process.env.PUBLIC_URL + "/testsrc/Debug.mp4";
   console.log(moviefile_path);
   console.log(markerpatternfile_path);
@@ -40,4 +54,4 @@ const ARComponent = () => {
   );
 };
 
-export default ARComponent;
+export default ARReader;
