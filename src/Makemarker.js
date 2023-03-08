@@ -43,7 +43,7 @@ const MovieUploader = () => {
   var strageFilePath_ARmarker_pattern = null;
 
   // 卒アルQR
-  var qr_path = "firebase" + user_id;
+  var qr_path = "https://abc?user_id=" + user_id;
 
   // 画像アップロード
   const UploadinnerImage = (e) => {
@@ -178,7 +178,7 @@ const MovieUploader = () => {
 
      let link = document.createElement("a");
      link.href = canvas.toDataURL("image/png");
-     link.download = "test.png";
+     link.download = "qr-code.png";
      link.click();
 
 
@@ -192,7 +192,7 @@ const MovieUploader = () => {
         <>
           {isUploaded ? (
             <>
-              <QRCodeCanvas id = "canvas_qr" value={{qr_path}} />,
+              <QRCodeCanvas id = "canvas_qr" value={qr_path} />,
                 <p>
                   <Button variant="contained" onClick={DownloadQR}>
                     QRコードのダウンロード

@@ -27,7 +27,7 @@ function MovieUploader() {
       console.log("Document written with ID: ", docRef.id);
       // user_id = docRef.id;
       setuse_id(docRef.id);
-      console.log("user_id"  + user_id);
+      console.log("user_id:"  + user_id);
 
       const movie_path = docRef.id + "/" + file.name;
       upload(movie_path,file);
@@ -118,7 +118,7 @@ function MovieUploader() {
     <>
       {loading ? (
         <div>
-          <progress max="100" value="50" id="loading"></progress>
+          <progress max="100" value="0" id="loading"></progress>
           <h3 id="percentage">0 %</h3>
           <h2 className="nowloading">アップロード中・・・</h2>
         </div>
@@ -127,14 +127,12 @@ function MovieUploader() {
           {isUploaded ? (
             <>
               <div>
-                <img
+                {/* <img
                   id="qr-code"
                   src="qr-code.png"
                   alt="qr-code"
                   className="qr-code"
-                />
-                <br />
-                <br />
+                /> */}
                 <h2 id="result" className="result">
                   <p>アップロード完了しました！</p>
                 </h2>
