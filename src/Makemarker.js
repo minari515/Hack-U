@@ -43,7 +43,7 @@ const MovieUploader = () => {
   var strageFilePath_ARmarker_pattern = null;
 
   // 卒アルQR
-  var qr_path = "https://abc?user_id=" + user_id;
+  var qr_path = "https://test-arbum.web.app/reader?user_id=" + user_id;
 
   // 画像アップロード
   const UploadinnerImage = (e) => {
@@ -247,6 +247,8 @@ const MovieUploader = () => {
               <div id="imageContainer"></div>
               {/* <img id="qr-code" src="qr-code.png" alt="qr-code" className="qr-code"/> */}
               {/* <QRCodeSVG value="https://reactjs.org/" /> */}
+              <input id="patternRation" class="mdl-silder" type="range" min="10" max="90" value="50" tabIndex="0">
+              </input>
 
             </div>
           )}
